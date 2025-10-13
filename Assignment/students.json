@@ -1,0 +1,17 @@
+{
+    "s0": {
+        "name": "Harsh",
+        "age": 22,
+        "marks": 80
+    },
+    "s1": {
+        "name": "H1",
+        "age": 20,
+        "marks": 90
+    },
+    "102": {
+        "name": "Jenish",
+        "age": 20,
+        "marks": 99
+    }
+}

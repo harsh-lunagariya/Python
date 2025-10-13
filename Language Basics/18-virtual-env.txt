@@ -1,0 +1,16 @@
+Creating vertual environment 
+python3 -m venv <env_name>
+
+For Using 
+source <env_name>/bin/activate    for linux and mac
+.\<env_name>\Sripts\activate
+
+For deactivate use deactivate
+
+creating requirement file
+pip freeze > requirement.txt
+
+installing requirement file
+pip install -r requirement.txt
+
+pip list

@@ -1,0 +1,50 @@
+*Creating Git Repo
+-git init
+-git clone
+-git status
+
+*Review a repo history
+-git log
+-git log -p     it also give diifrenece of before and after commit
+-git log --oneline
+-git log --stat     it give in which file howmuch change
+-git log -n     it give latest n commits
+-git show <commit_id>       it show perticuler commit
+
+*add and commit
+-git add <file..>
+-git add .      it add all files
+-git commit -m "message"
+-git commit -am "message"   it commit Created file changes
+
+
+*Usefull commands
+-git diff <file_name>       Diffrence between two commit
+-git restore <file_name>        it restore file content to main branch means undo changes
+
+*Branching
+-git branch     give branch names
+-git branch <branch_name>       Create branch
+-git branch -d <branch_name>    Delete branch 
+-git checkout -b <branch_name>     Create and switch to new branch
+-git checkout <branch_name>     switch branch
+
+*merge
+checkout to master branch
+-git merge <branch_name>        merge branch
+
+*tagging
+-git tag -a <tag_name> <sha_id> -m "message"    Create tag
+-git tag -d <tag_name>      Delete tag
+
+*Stash: git stash is a command in Git that allows you to temporarily save changesthat 
+you’ve made to your working directory, but don't want to commit yet. It essentially helps 
+you “shelve” your current work so you can safely switch to another branch or task without 
+losing any of your changes.
+-git stash
+-git stash list
+-git stash apply    unstash
+
+
+
+
