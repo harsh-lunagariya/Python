@@ -25,3 +25,16 @@ froz = frozenset(lst)
 print(froz)
 # Use - Since sets are mutable and un-hashable, they can't be used as key in dictonary
 # but frozen set are hashable and can be use as a key in dictonary
+
+# hash() function is pre built that returns a fix integer for an object
+
+print(hash(10))             # Example for integer
+print(hash("hello"))        # Example for string
+print(hash((1, 2, 3)))      # Example for tuple
+print(hash(frozenset([1,2,3])))  # Example for frozenset
+
+s = {1,2,3,4}
+# print(hash(s))    # gives TypeError
+
+fs = frozenset(s)
+print(hash(fs))     # This works good

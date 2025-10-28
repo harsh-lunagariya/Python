@@ -45,6 +45,10 @@ losing any of your changes.
 -git stash list
 -git stash apply    unstash
 
+*remote
+-git remote add origin _link_
 
+git push -u origin <branch_name>
+git pull
 
 
