@@ -1,4 +1,5 @@
 import requests
+import time
 
 # r = requests.get('https://xkcd.com/353/')
 
@@ -22,8 +23,20 @@ import requests
 # print(r.text)
 # print(r.url)
 
-payload = {'username':'harsh', 'password': 'testing'}
+# payload = {'username':'harsh', 'password': 'testing'}
 
-r = requests.post("http://httpbin.org/post",data=payload)
+# r = requests.post("http://httpbin.org/post",data=payload)
 
-print(r.text)
+# print(r.json())
+
+
+# r = requests.get("https://httpbin.org/basic-auth/corey/test",auth=('corey','test2'))
+
+# print(r.text)
+# print(r.status_code)
+
+s=time.time()
+r = requests.get('https://httpbin.org/delay/1',timeout=12)
+
+e=time.time()
+print(r.text,e-s)

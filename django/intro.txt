@@ -1,0 +1,49 @@
+*Django is a high-level Python web framework that makes it easier and faster to build web applications.
+
+-Django follows the Model–View–Template (MVT) pattern, similar to MVC.
+
+-majority component available for development
+
+-provide security
+
+-scalability
+
+-That use in rapid applications development
+
+    
+*create virtual environment with
+-uv venv
+
+*To install Django use
+-uv pip install Django
+
+*To Start project use
+-django-admin startproject <project_name>
+-cd <project_name>
+
+
+*For run server use
+-python manage.py runserver <port_number>"default is 8000"
+
+
+* HTML page adding
+-for rendering file use from django.shortcuts import render
+-then return render(request, 'filepath')
+-then in setting.py add the templates directory in TEMPLATES -> DIRS add in list
+
+
+* CSS loading 
+-in html page for link css in href use {% static 'style.css' %}
+-also top of the page load static {% load static %}
+-then change settings for that in settings.py import os
+-add after STATIC_URL add STATICFILES_DIRS = [os.path.join(BASE_DIR,'static)]
+
+
+*Creating app
+-python3 manage.py startapp <app_name>
+-add the file name in setting.py in INSTALLED_APPS
+-create templates/<app_name> folder in app , this no need to configure
+-create or put html file in this folder
+-in project urls.py add path like below and also import include from django.urls
+    path('<app_name>/', include(<app_name>.urls))
+-also create a file in app urls.py
