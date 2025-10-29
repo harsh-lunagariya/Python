@@ -24,9 +24,12 @@
 
 *For run server use
 -python manage.py runserver <port_number>"default is 8000"
+-also note that you are in project directory
 
 
 * HTML page adding
+-for httpreponse from django.http import Httpreponse
+-return Httpreponse('msg')
 -for rendering file use from django.shortcuts import render
 -then return render(request, 'filepath')
 -then in setting.py add the templates directory in TEMPLATES -> DIRS add in list
@@ -36,7 +39,7 @@
 -in html page for link css in href use {% static 'style.css' %}
 -also top of the page load static {% load static %}
 -then change settings for that in settings.py import os
--add after STATIC_URL add STATICFILES_DIRS = [os.path.join(BASE_DIR,'static)]
+-add after STATIC_URL add STATICFILES_DIRS = [os.path.join(BASE_DIR,'static')]
 
 
 *Creating app
@@ -47,3 +50,18 @@
 -in project urls.py add path like below and also import include from django.urls
     path('<app_name>/', include(<app_name>.urls))
 -also create a file in app urls.py
+
+*Creating layout page that all can use it
+-in our root template dir create layout.html and write layout and block name
+-that layout we can extend in any of our file 
+
+
+*with Tailwind css
+-uv pip install django-tailwind
+-pip install 'django-tailwind[reload]'
+-add app in settings 'tailwind'
+-run command $python3 manage.py tailwind init
+-add app in setting or default 'theme'
+-in setting create TAILWIND_APP_NAME = 'theme' 
+- same creat INTERNAL_IPS = ['127.0.0.1']
+-run command $python3 manage.py tailwind install
