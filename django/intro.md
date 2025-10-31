@@ -93,3 +93,22 @@ python3 manage.py migrate
 *model of app that add in admin
 from .models import <modelname>
 admin.site.register(modelname)
+
+
+**after performing model operation must do makemigrations and then migrate
+
+
+* Writing models.py
+from django.db import models
+class modelname(models.Model):
+    ...
+    def __str__(self):
+        return self.name  ->this name is name that you want to show in admin pannel
+-add that in admin.py
+from .models import modelname
+class modeladmin(admin.ModelAdmin):
+    list_display = ()   -> makesure that is in tuple
+admin.site.register(modelname, modeladmin)
+
+
+    
