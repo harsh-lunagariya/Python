@@ -65,3 +65,31 @@
 -in setting create TAILWIND_APP_NAME = 'theme' 
 - same creat INTERNAL_IPS = ['127.0.0.1']
 -run command $python3 manage.py tailwind install
+-run command for production ready $python3 manage.py tailwind build
+-run command in diffrent terminal for start tailwind $python3 manage.py tailwind start
+-for auto reload follow below step 
+-add this into INSTALLED_APPS 'django_browser_reload',
+-add this into MIDDLEWARE 'django_browser_reload.middleware.BrowserReloadMiddleware',
+-add this in urls path("__reload__/",include("django_browser_reload.urls")),
+-restart all terminal
+
+*Admin pannel
+-python3 manage.py migrate
+-python3 manage.py createsuperuser
+
+
+*image setting.py
+MEDIA_URL = '/media/'
+MEDIA_ROOT = os.path.join(BASE_DIR,'media')
+-in root urls.py
+from django.conf import settings
+from django.conf.urls.static import static
+-urlpatterns = [
+    ...
+] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+python3 manage.py makemigrations <app_name>
+python3 manage.py migrate
+
+*model of app that add in admin
+from .models import <modelname>
+admin.site.register(modelname)
